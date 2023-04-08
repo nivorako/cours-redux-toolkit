@@ -1,9 +1,11 @@
-import TaskItem from "./TaskItem";
+import {useSelector} from "react-redux"
+import TaskItem from "./TaskItem"
 
 const TasksList = (props) => {
+  const tasks = useSelector((state) => state.todo)
   return (
     <>
-      {props.tasks.map((t) => (
+      {tasks.map((t) => (
         <TaskItem
           task={t}
           key={t.id}
